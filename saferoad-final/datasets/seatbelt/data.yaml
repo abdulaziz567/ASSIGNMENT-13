@@ -1,0 +1,13 @@
+names:
+- No-seat-belt
+- Seat_belt
+nc: 2
+roboflow:
+  license: CC BY 4.0
+  project: seat-belt-detection-c2nia
+  url: https://universe.roboflow.com/renuka-ed2ia/seat-belt-detection-c2nia/dataset/1
+  version: 1
+  workspace: renuka-ed2ia
+test: ../test/images
+train: ../train/images
+val: ../valid/images
