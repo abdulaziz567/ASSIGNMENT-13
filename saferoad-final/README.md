@@ -12,6 +12,10 @@ license: mit
 
 # 🚦 SafeRoad AI — Seatbelt Violation Detection & License Plate Logging
 
+[![Live Demo](https://img.shields.io/badge/🤗%20HuggingFace-Live%20Demo-yellow?style=for-the-badge)](https://huggingface.co/spaces/abdul-aziz-ai/saferoad-ai)
+
+> 🚀 **[Click here for Live Demo](https://huggingface.co/spaces/abdul-aziz-ai/saferoad-ai)**
+
 An intelligent traffic monitoring system that:
 - Detects drivers with/without seatbelts using **YOLOv8**
 - Identifies violations and finds the nearest **license plate**
@@ -139,31 +143,6 @@ streamlit run app.py
 
 ---
 
-## 🗃 Database Schema
-
-```sql
-CREATE TABLE violations (
-    id             SERIAL PRIMARY KEY,
-    plate_number   TEXT,                          -- Extracted OCR plate text
-    violation_type TEXT DEFAULT 'No Seatbelt',   -- Type of violation
-    confidence     REAL,                          -- YOLO detection confidence
-    timestamp      TIMESTAMPTZ DEFAULT NOW(),     -- Auto-recorded time
-    image_name     TEXT,                          -- Source file name
-    frame_number   INT                            -- Video frame number
-);
-```
-
-### Connect PostgreSQL
-
-Enter your PostgreSQL connection URL in the sidebar:
-```
-postgresql://username:password@host:5432/database_name
-```
-
-If no DB is connected, violations are stored in session memory and can be exported as CSV.
-
----
-
 ## 🖥 UI Features
 
 | Tab | Description |
@@ -193,4 +172,3 @@ If no DB is connected, violations are stored in session memory and can be export
 - Without trained `.pt` model files, the app runs in **demo mode** with simulated detections.
 - Place `seatbelt_yolov8.pt` and `license_plate_yolov8.pt` in the `models/` folder to enable real inference.
 - The app auto-detects model availability on startup and shows a status banner.
-"# assignment" 
